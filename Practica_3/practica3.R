@@ -15,10 +15,10 @@
 
 # A cada probabilidad le asigna el punto (x) cuya probabilidad acumulada (F(x)) es ese valor (esa probabilidad).
 
-# Esto es, si F(x0) = p0, cuantil(p0) = q0.
+# Esto es, si F(x0) = p0, cuantil(p0) = x0.
 
 # Función de distribución -> a cada punto le asigna una probabilidad.
-# Funció cuantil -> a cada probabilidad le asigna un punto.
+# Función cuantil -> a cada probabilidad le asigna un punto.
 
 
 #***********************************************

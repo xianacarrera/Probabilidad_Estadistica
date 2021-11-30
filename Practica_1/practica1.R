@@ -2,8 +2,8 @@
 # Ejercicio 1
 #*************************************************************
 
-# X_1 = "NÂº de caras en los dos primeros lanzamientos"
-# X_2 = "NÂº de caras en los tres lanzamientos"
+# X_1 = "Nº de caras en los dos primeros lanzamientos"
+# X_2 = "Nº de caras en los tres lanzamientos"
 
 # X = (X_1, X_2)
 # soporte = {(0,0), (0,1), (1,1), (1,2), (2,2), (2,3)}
@@ -11,7 +11,7 @@
 # P((X_1,X_2) = (0,0)) = 1/8
 
 
-# Lo primero que deberÃ­amos hacer al comenzar un script es elegir el working directory. Opciones:
+# Lo primero que deberíamos hacer al comenzar un script es elegir el working directory. Opciones:
 # 1) setwd("C:/...")
 # 2) CTRL + MAYUS + H
 # 3) 3 puntos en panel inferior derecho.
@@ -25,21 +25,21 @@ yy=c(0,1,1,2,2,3)
 
 # Los representamos con plot
 # Elegimos el tipo de punto con pch (8 -> asterisco)
-plot(xx,yy, pch=8, xlab="NÂº de caras en los 2 primeros lanzamientos",
-     ylab="NÂº de caras en 3 lanzamientos", main="Diagrama de dispersiÃ³n")
+plot(xx,yy, pch=8, xlab="Nº de caras en los 2 primeros lanzamientos",
+     ylab="Nº de caras en 3 lanzamientos", main="Diagrama de dispersión")
 
-# Ahora queremos aÃ±adir una etiqueta con la probabilidad a cada punto
-# Usamos la funciÃ³n text pasÃ¡ndole las coordenadas de los puntos y las labels (en orden)
+# Ahora queremos añadir una etiqueta con la probabilidad a cada punto
+# Usamos la función text pasándole las coordenadas de los puntos y las labels (en orden)
 text(xx, yy+0.2, labels=c("1/8", "1/8", "1/4", "1/4", "1/8", "1/8"))
 
 # Problema -> ha superpuesto los puntos con el texto
 # Vamos a definir un nuevo vector con los puntos desplazados ligeramente a la derecha
-# Los Ãºltimos estÃ¡n a la izquierda para que no se vayan del grÃ¡fico 
+# Los últimos estÃ¡n a la izquierda para que no se vayan del gráfico 
 xxd = c(0.1, 0.1, 1.1, 1.1, 1.9, 1.9)
 
 
-# Funciones de primer nivel -> crean una ventana grÃ¡fica nueva
-# Funciones de segundo nivel -> sobreescriben en una ventana grÃ¡fica ya existente
+# Funciones de primer nivel -> crean una ventana gráfica nueva
+# Funciones de segundo nivel -> sobreescriben en una ventana gráfica ya existente
 
 text(xxd, yy, labels=c("1/8", "1/8", "1/4", "1/4", "1/8", "1/8"))
 
@@ -81,9 +81,9 @@ addmargins(conj)
 # Para eso, construimos una matriz diagonal con los inversos de la marginal
 
 # Para la condicionada de X1 a X2, multiplicamos por la derecha
-# Para la condicionada de X2 a X1, tendrÃ­amos que multiplicar por la izquierda
+# Para la condicionada de X2 a X1, tendríamos que multiplicar por la izquierda
 
-cond_X1_a_X2=conj%*%diag(1/marg_X2)     # %*% para multiplicaciÃ³n matricial
+cond_X1_a_X2=conj%*%diag(1/marg_X2)     # %*% para multiplicación matricial
 cond_X1_a_X2
 
 

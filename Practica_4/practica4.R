@@ -39,7 +39,7 @@ pnorm(1.5, mean=0, sd=1)
 # P(Z > -2)
 pnorm(2, mean=0, sd=1) # Por simetría
 # Ahora bien, R también admite valores negativos. Podemos hacerlo directamente
-pnorm(-2, mean=0, sd=1)
+1-pnorm(-2, mean=0, sd=1)
 
 
 # P(Z<=0)=0.57
@@ -114,15 +114,15 @@ plot(xc, yc, pch=16, main="Datos centrados", asp=1)
 
 
 
-# Estandarizaicón multivariante
+# Estandarización multivariante
 Sc = cov(dat)
 auto=eigen(Sc); auto     # Contiene los autovalores de la matriz de covarianzas
 
-# Se accede usando $,[] o usando [[]]
+# Se accede usando $,[] o [[]]
 valores = auto$values
 v = auto$vectors
 
-# Ahora voy a construir la matriz sigma^(-1/2)
+# Ahora construimos la matriz sigma^(-1/2)
 # sigma = matriz de autovectores * diag(autovalores) * matriz de autovectores traspuesta
 # sigma^(-1/2) = matriz de autovectores * (diag(autovalores))^(-1/2) * matriz de autovectores traspuesta
 Sc12 = v %*% diag(1/sqrt(valores)) %*% t(v)
@@ -133,7 +133,7 @@ Sc12 = v %*% diag(1/sqrt(valores)) %*% t(v)
 datestm = cbind(xc,yc)%*%Sc12
 
 # Usamos asp = 1 para mantener los ejes
-plot(datestm, pch=16, main="Datos estandarizados multi", asp=1)
+plot(datestm, pch=16, main="Datos estandarizadoSs multi", asp=1)
 
 # Se mantiene la forma del diagrama de dispersión siempre y cuando mantengamos la proporcionalidad??????
 # Con la uni sí y la multi no ??? Quéeee
